@@ -12,7 +12,6 @@ const modals = () => {
     
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
-                // document.body.classList.add('modal-open');
             });
         });
 
@@ -23,14 +22,12 @@ const modals = () => {
 
             modal.style.display = 'none';
             document.body.style.overflow = '';
-            // document.body.classList.remove('modal-open');
         });
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.style.display = 'none';
                 document.body.style.overflow = '';
-                // document.body.classList.remove('modal-open');
             }
         });
     }
