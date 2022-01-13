@@ -1,9 +1,11 @@
-const modals = () => {
-    function bindModal(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true) {
+const modals = (state) => {
+    function bindModal(triggerSelector, modalSelector, closeSelector, neededProperties, formSelector, closeClickOverlay = true) {
         const trigger = document.querySelectorAll(triggerSelector),
               modal = document.querySelector(modalSelector),
               close = document.querySelector(closeSelector),
-              windows = document.querySelectorAll('[data-modal]');
+              windows = document.querySelectorAll('[data-modal]'),
+              messageWarn = document.createElement('div');
+        messageWarn.classList.add('status');
 
         trigger.forEach(item => {
             item.addEventListener('click', (e) => {
@@ -18,6 +20,7 @@ const modals = () => {
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
             });
+
         });
 
         close.addEventListener('click', (e) => {
